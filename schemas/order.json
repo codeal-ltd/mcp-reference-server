@@ -85,7 +85,14 @@
         "zipCodeOrPostalCode": {
           "description": "ZIP code (US) or postal code (international) for the address",
           "type": "string"
-        }
+        },
+         "buyerEORI": {
+          "description": "Buyer ID for customs identification.",
+          "type": "string"
+        },  
+          "buyerTAXid": {
+          "description": "Buyer ID for tax authority identification.",
+          "type": "string"
       },
       "additionalProperties": false
     },
@@ -367,6 +374,10 @@
       "description": "Order Tax",
       "type": "number"
     },
+   "orderDuty": {
+      "description": "Order Duty",
+      "type": "number"
+    },
     "paymentStatus": {
       "description": "status of the payment",
       "type": "string"
@@ -472,8 +483,32 @@
       "description": "Additional shipping notes",
       "type": "string"
     },
+    "shippingAccountNumber": {
+      "description": "Shipping account number for freight",
+      "type": "string"
+    },  
+    "shippingAccountNumberDuties": {
+      "description": "Shipping account number for duties",
+      "type": "string"
+    },
+    "shippingRequestedDate": {
+      "description": "Requested ship date",
+      "type": "string"
+    },
+    "shippingDoNotShipBefore": {
+      "description": "Do not ship before date",
+      "type": "string"
+    },
     "shippingPrice": {
       "description": "Shipping cost",
+      "type": "number"
+    },
+    "shippingInsurance": {
+      "description": "Shipping insurance",
+      "type": "number"
+    },
+    "additionalFees": {
+      "description": "Additional fees",
       "type": "number"
     },
     "giftNote": {
@@ -481,7 +516,10 @@
     },
     "incoterms": {
       "type": "string"
-    }
+    },
+    "reasonForExport": {
+      "description": "Sale (default), Return, Repair, Gift, Sample, Documents, Other",
+      "type": "string"  
   },
   "required": [
     "id",
